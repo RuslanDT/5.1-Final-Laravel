@@ -16,4 +16,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [AlumnoController::class, 'index']);
 
+Route::get('/alumnos/store', [AlumnoController::class, 'store'])->name('alumnos.store');
+Route::put('/alumnos/{alumno}', [AlumnoController::class, 'update'])->name('alumnos.update');
+
 Route::resource('/alumnos', AlumnoController::class);
