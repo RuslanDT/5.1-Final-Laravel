@@ -13,11 +13,11 @@ return new class extends Migration
     {
         Schema::create('alumnos', function (Blueprint $table) {
             $table->id();
-            $table->string("matricula");
-            $table->string("nombre");
-            $table->date("fecha_nacimiento");
-            $table->string("telefono");
-            $table->string("email") -> nullable();
+            $table->string("matricula, 10");
+            $table->string("nombre, 50");
+            $table->date("fecha_nacimiento, 50");
+            $table->string("telefono, 20");
+            $table->string("email, 50") -> nullable();
             $table->unsignedBigInteger('nivel_id');
             $table->timestamps();
             $table->foreign("nivel_id")->references("id")-> on("nivels");
